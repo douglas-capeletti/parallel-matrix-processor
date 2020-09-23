@@ -3,6 +3,6 @@ package matrix;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        Matrix.run(Integer.parseInt(args[0]), true);
     }
 }
