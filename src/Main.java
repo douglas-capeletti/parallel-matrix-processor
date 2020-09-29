@@ -22,11 +22,16 @@ public class Main {
 
     private static int parseFormat(String threadFormat) {
         int totalThreads = Runtime.getRuntime().availableProcessors();
+        int supportedThreads = 256;
+        int usedThreads;
         if (threadFormat.endsWith("%")) {
             int percent = Integer.parseInt(threadFormat.substring(0, threadFormat.length() - 1));
-            return Math.min(totalThreads, (totalThreads / (100 / percent)));
+            usedThreads = Math.min(supportedThreads, (totalThreads / (100 / percent)));
         }
         int threadRequested = Integer.parseInt(threadFormat);
-        return Math.min(threadRequested, totalThreads);
+        usedThreads = Math.min(supportedThreads, threadRequested);
+        System.out.println("Total de threads disponíveis: " + totalThreads);
+        System.out.println("Total de threads utilizadas: " + usedThreads);
+        return usedThreads;
     }
 }

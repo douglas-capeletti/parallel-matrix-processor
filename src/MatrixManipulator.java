@@ -20,8 +20,7 @@ public class MatrixManipulator {
         }
 
         // MOSTRA O TEMPO DE EXECUCAO
-        System.out.println("Processing time:");
-        System.out.println(total);
+        System.out.println("Tempo de processamento: " + total);
     }
 
     //Efetua a multiplicação
